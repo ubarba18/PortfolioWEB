@@ -10,7 +10,7 @@ const Navbar = () => {
                 <p>Software Developer</p>
                 <ul className="Navbar-social">
                     <li class="list-inline-item">
-                        <a href=""></a>
+                        <a href="#"></a>
                     </li>
                 </ul>
             </div>

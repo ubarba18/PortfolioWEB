@@ -1,21 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import './pages/AboutMe'
-import Navbar from './Navbar';
-import About from './pages/AboutMe';
-import Content from './pages/Content';
+import logo from "./logo.svg";
+import "./App.css";
+import "./pages/AboutMe";
+import Navbar from "./pages/Navbar";
+import About from "./pages/AboutMe";
+import Content from "./pages/Content";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Navbar/>
-        
-        <Content/>
+    return (
+        <div className="App">
+            <header className="App-header">
+                <Navbar />
 
-      </header>
-    </div>
-  );
+                <Content />
+            </header>
+        </div>
+    );
 }
 
 export default App;
