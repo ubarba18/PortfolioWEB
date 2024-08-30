@@ -8,11 +8,12 @@ import Content from "./pages/Content";
 function App() {
     return (
         <div className="App">
+            
             <header className="App-header">
                 <Navbar />
-
                 <Content />
             </header>
+
         </div>
     );
 }

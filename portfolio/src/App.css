@@ -28,6 +28,25 @@
   border-radius: 50%;
 }
 
+.Navbar-social{
+  display: flex;
+  list-style: none;
+  padding: 1rem;
+  font-weight: bold;
+  
+}
+
+.Navbar-social a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Arial, sans-serif;
+}
+
+.list-inline-item{
+  padding: 0.5rem 0 0.5rem 1rem;
+  align-items: center;
+}
+
 hr {
     margin: 1rem 0;
     color: inherit;
@@ -57,6 +76,23 @@ hr {
   color: rgba(255, 255, 255, 0.7);
   font-family: Arial, sans-serif;
   font-size: 20px;
+}
+
+.full-screen-iframe-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* optional */
+  z-index: 1000; /* optional */
+}
+
+.normal-iframe-container {
+  width: 100%;
+  height: 800px;
+  border: 1px solid #ddd;
+  padding: 10px;
 }
 
 /* .Content-container{
