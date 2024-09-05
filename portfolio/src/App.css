@@ -1,14 +1,36 @@
+.App{
+  
+}
+
+.App-header {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden; /* Add this line */
+    background-color: #111821;
+    min-height: 100vh;
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-around;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+
+
 .Navbar-container {
-  position: fixed;
     left: 0;
     top: 0;
     height: 100vh;
     width: 280px;
+    padding: 1rem;
     background: #1e2a3a;
     color: #fff;
     overflow-y: auto;
     scrollbar-color: rgba(0, 0, 0, 0.2) #1e2a3a;
     scrollbar-width: thin;
+    /* border: solid red 3px; */
+    
 }
 
 .Navbar-profile {
@@ -17,6 +39,7 @@
   align-items: center;
   padding: 1rem;
   border-bottom: 1px solid #2c3e50;
+  text-align: center;
 }
 
 .pfp {
@@ -95,26 +118,69 @@ hr {
   padding: 10px;
 }
 
-/* .Content-container{
-  display: flex;
-  width: 87vw;
+.Content{
+  flex: 1;
+  /* border : solid green 3px; */
   height: 100vh;
-
-} */
-
-.App {
-  text-align: center;
+  width: 100vw;
+  max-width: calc(100vw - 200px);
 }
 
-.App-header {
-  background-color: #111821;
-  min-height: 100vh;
+.content-bio{
   display: flex;
+  padding: 48px;
+}
 
-  align-items: center;
-  justify-content: space-around;
-  font-size: calc(10px + 2vmin);
-  color: white;}
+.content-container {
+    width: 100%;
+}
+
+.content-name {
+  margin:  0 0 4px;
+}
+
+
+.content-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #ffffffB3;
+  margin: 0 0 16px;
+}
+
+.about-me-box {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #ffffffB3;
+  margin: 0 0 24px;
+}
+
+.content-image {
+  border: solid red 3px;
+  display: flex;
+  
+}
+
+.content-image img {
+  height: 100%; /* Add this line */
+  width: 100%; /* Add this line to make the image full width as well */
+  object-fit: contain; /* Add this line to maintain the image's aspect ratio */
+  
+}
+
+/* @media (min-width: 992px) {
+  .col-lg-5 {
+      flex: 0 0 auto;
+      width: 41.66666667%;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .col-md-5 {
+      flex: 0 0 auto;
+      width: 41.66666667%;
+  }
+} */
 
 
   .modal {
@@ -144,6 +210,7 @@ hr {
     cursor: pointer;
     scrollbar-color: rgba(0, 0, 0, 0.2) #1e2a3a;
     scrollbar-width: thin;
+    text-align: center;
 
   }
 

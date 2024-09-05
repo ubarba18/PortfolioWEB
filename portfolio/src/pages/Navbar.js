@@ -11,13 +11,21 @@ const Navbar = ({ openModal }) => {
                 <p>Software Developer</p>
                 <ul className="Navbar-social">
                     <li class="list-inline-item">
-                        <a href="https://www.linkedin.com/in/urielbarba/">
+                        <a
+                            href="https://www.linkedin.com/in/urielbarba/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             {" "}
                             <FaLinkedin />
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="https://github.com/ubarba18">
+                        <a
+                            href="https://github.com/ubarba18"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             {" "}
                             <FaGithub />
                         </a>

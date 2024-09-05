@@ -15,6 +15,7 @@ function App() {
     const closeModal = () => {
         setIsModalOpen(false);
     };
+
     return (
         <div className="App">
             <header className="App-header">
