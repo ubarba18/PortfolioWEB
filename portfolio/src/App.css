@@ -1,5 +1,4 @@
 .App{
-  
 }
 
 .App-header {
@@ -21,6 +20,7 @@
 .Navbar-container {
     left: 0;
     top: 0;
+    position: fixed;
     height: 100vh;
     width: 280px;
     padding: 1rem;
@@ -38,7 +38,7 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  border-bottom: 1px solid #2c3e50;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   text-align: center;
 }
 
@@ -68,14 +68,12 @@
 .list-inline-item{
   padding: 0.5rem 0 0.5rem 1rem;
   align-items: center;
+  
 }
 
 hr {
     margin: 1rem 0;
-    color: inherit;
     border: 0;
-    border-top: var(--bs-border-width) solid;
-    opacity: .25;
 }
 
 
@@ -124,15 +122,22 @@ hr {
   height: 100vh;
   width: 100vw;
   max-width: calc(100vw - 200px);
+  
 }
 
 .content-bio{
   display: flex;
   padding: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  min-width: 100%;
+
 }
 
 .content-container {
     width: 100%;
+    margin-left: 280px;
+
+
 }
 
 .content-name {
@@ -157,6 +162,7 @@ hr {
 .content-image {
   border: solid red 3px;
   display: flex;
+  margin-right: 500px;
   
 }
 
@@ -232,3 +238,107 @@ hr {
   
 }
 
+
+.content-projects{
+  display: flex;
+  padding: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  min-width: 100%;
+
+}
+
+.content-projects-container {
+    width: 100%;
+    margin-left: 280px;
+
+
+}
+
+
+
+.content-projects-title {
+  margin: 0 0 16px;
+  font-size: 2rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.content-projects-title:before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 100%;
+  background: #54B689;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.content-projects-box {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #ffffffB3;
+  margin: 0 0 24px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-left: 40px; /* add padding to the left to make room for the Previous button */
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.5s ease-in-out;
+  margin-left: -40px; /* add negative margin to compensate for the padding */
+  padding-left: 40px; /* add padding to the left to push the cards to the right */
+}
+
+.carousel-item {
+  width: 100%;
+  display: inline-block;
+  margin-right: 5px; /* reduce the margin to make the gap smaller */
+}
+
+.card {
+  background-color: #1e2a3a;
+  border: 1px solid #54B689;
+  color: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%; /* adjust the width to fit your needs */
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* add relative positioning to the cards */
+  z-index: 0; /* add z-index to send the cards to the back */
+}
+
+.carousel-control-prev, .carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  z-index: 1; /* add z-index to bring buttons to the front */
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+  background-color: #444;
+}
+
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
+}
