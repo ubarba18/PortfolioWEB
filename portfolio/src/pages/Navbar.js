@@ -4,36 +4,40 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Navbar = ({ openModal }) => {
     return (
-        <nav className="Navbar-container">
-            <div className="Navbar-profile">
+        <nav className="Navbar-container d-flex flex-column">
+            <div className="Navbar-profile text-center">
                 <h1>Uriel Barba</h1>
-                <img className="pfp" src="images/lul.jpg" alt="me"></img>
+                <div className="pfp-container">
+                    <img
+                        className="pfp img-fluid"
+                        src="images/lul.jpg"
+                        alt="me"
+                    />
+                </div>
                 <p>Software Developer</p>
-                <ul className="Navbar-social">
-                    <li class="list-inline-item">
+                <ul className="Navbar-social list-inline">
+                    <li className="list-inline-item">
                         <a
                             href="https://www.linkedin.com/in/urielbarba/"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            {" "}
                             <FaLinkedin />
                         </a>
                     </li>
-                    <li class="list-inline-item">
+                    <li className="list-inline-item">
                         <a
                             href="https://github.com/ubarba18"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            {" "}
                             <FaGithub />
                         </a>
                     </li>
                 </ul>
             </div>
-            <ul className="Navbar-links">
-                <hr></hr>
+            <hr />
+            <ul className="Navbar-links list-unstyled">
                 <li className="nav-item">
                     <a href="#">
                         <CgUser /> About Me
@@ -43,9 +47,7 @@ const Navbar = ({ openModal }) => {
                     <a href="#" onClick={openModal}>
                         <CgExport /> Resume
                     </a>
-                    <div id="resume-container"></div>
                 </li>
-
                 <li className="nav-item">
                     <a href="#">
                         <CgMailOpen /> Contact Me

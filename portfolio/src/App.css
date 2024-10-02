@@ -1,88 +1,18 @@
-.App{
+/* General Styles */
+.App {
+  background-color: #111821; /* Dark background for the entire app */
+  min-height: 100vh; /* Ensure full height */
 }
 
-.App-header {
-    display: flex;
-    flex-wrap: wrap;
-    overflow-x: hidden; /* Add this line */
-    background-color: #111821;
-    min-height: 100vh;
-    display: flex;
-    
-    align-items: center;
-    justify-content: space-around;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-
-
+/* Navbar Styles */
 .Navbar-container {
-    left: 0;
-    top: 0;
-    position: fixed;
-    height: 100vh;
-    width: 280px;
-    padding: 1rem;
-    background: #1e2a3a;
-    color: #fff;
-    overflow-y: auto;
-    scrollbar-color: rgba(0, 0, 0, 0.2) #1e2a3a;
-    scrollbar-width: thin;
-    /* border: solid red 3px; */
-    
-}
-
-.Navbar-profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: fixed; /* Fixed positioning */
+  height: 100vh; /* Full height */
+  width: 280px; /* Fixed width */
   padding: 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
-}
-
-.pfp {
-  width: 100%;
-  height: auto;
-  max-width: 175px; 
-  max-height: 175px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.Navbar-social{
-  display: flex;
-  list-style: none;
-  padding: 1rem;
-  font-weight: bold;
-  
-}
-
-.Navbar-social a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: Arial, sans-serif;
-}
-
-.list-inline-item{
-  padding: 0.5rem 0 0.5rem 1rem;
-  align-items: center;
-  
-}
-
-hr {
-    margin: 1rem 0;
-    border: 0;
-}
-
-
-.Navbar-links {
-  list-style: none;
-  padding: 1rem;
-  font-size: 15px;
-  font-weight: bold;
-  
+  background: #1e2a3a; /* Dark navbar background */
+  color: #fff; /* White text */
+  overflow-y: auto; /* Scrollable */
 }
 
 .nav-item {
@@ -92,253 +22,113 @@ hr {
   justify-content: space-between;
 }
 
-.Navbar-links a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: Arial, sans-serif;
-  font-size: 20px;
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .Navbar-container {
+    width: 100%; /* Full width on small screens */
+    height: auto; /* Height adjusts based on content */
+    position: relative; /* Change to relative for mobile view */
+  }
+  .Content {
+    margin-left: 0; /* Remove left margin on small screens */
+    margin-top: 56px; /* Add a top margin equal to navbar height */
+    padding: 1rem; /* Adjust padding */
+  }
 }
 
-.full-screen-iframe-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff; /* optional */
-  z-index: 1000; /* optional */
+/* Content Styles */
+.Content {
+  margin-left: 280px; /* Align with navbar */
+  margin-top: 0; /* No margin on top initially */
+  padding: 2rem; /* Spacing */
+  color: white; /* White text */
 }
 
-.normal-iframe-container {
-  width: 100%;
-  height: 800px;
-  border: 1px solid #ddd;
-  padding: 10px;
-}
-
-.Content{
-  flex: 1;
-  /* border : solid green 3px; */
-  height: 100vh;
-  width: 100vw;
-  max-width: calc(100vw - 200px);
-  
-}
-
-.content-bio{
+/* Bio and Image Layout */
+.content-bio {
   display: flex;
-  padding: 48px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  min-width: 100%;
-
-}
-
-.content-container {
-    width: 100%;
-    margin-left: 280px;
-
-
-}
-
-.content-name {
-  margin:  0 0 4px;
-}
-
-
-.content-title {
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #ffffffB3;
-  margin: 0 0 16px;
-}
-
-.about-me-box {
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #ffffffB3;
-  margin: 0 0 24px;
+  align-items: center; /* Center content vertically */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .content-image {
-  border: solid red 3px;
-  display: flex;
-  margin-right: 500px;
-  
+  margin-left: 20px; /* Space between text and image */
 }
 
 .content-image img {
-  height: 100%; /* Add this line */
-  width: 100%; /* Add this line to make the image full width as well */
-  object-fit: contain; /* Add this line to maintain the image's aspect ratio */
-  
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional rounded corners */
 }
 
-/* @media (min-width: 992px) {
-  .col-lg-5 {
-      flex: 0 0 auto;
-      width: 41.66666667%;
+/* Projects Section */
+.content-projects {
+  margin-top: 2rem; /* Space above projects */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-projects-title {
+    font-size: 1.5rem; /* Smaller title size on mobile */
   }
-  
 }
 
-@media (min-width: 768px) {
-  .col-md-5 {
-      flex: 0 0 auto;
-      width: 41.66666667%;
-  }
-} */
-
-
-  .modal {
-    position: fixed; /* Fixes the overlay to cover the entire viewport */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background for better visibility */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000; /* Ensure it sits on top of other content */
-
-  }
-  
-  .modal-content {
-    position: relative; /* Allows absolute positioning for child elements */
-    width: 90vw; /* 90% of the viewport width */
-    height: 90vh; /* 90% of the viewport height */
-    background: #1e2a3a;
-    overflow: hidden; /* Hide anything that overflows the container */
-    overflow-y: auto; /* Allow vertical scrolling */
-    
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
-    border-radius: 8px; /* Optional rounded corners */
-    cursor: pointer;
-    scrollbar-color: rgba(0, 0, 0, 0.2) #1e2a3a;
-    scrollbar-width: thin;
-    text-align: center;
-
-  }
-
-  .close {
-    position: center;
-    top: 5px;
-    right: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-
-  }
-
-.pdf-viewer {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Scale the PDF to fit within the container while maintaining its aspect ratio */
-
-  
-}
-
-
-.content-projects{
-  display: flex;
-  padding: 48px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  min-width: 100%;
-
-}
-
-.content-projects-container {
-    width: 100%;
-    margin-left: 280px;
-
-
-}
-
-
-
-.content-projects-title {
-  margin: 0 0 16px;
-  font-size: 2rem;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.content-projects-title:before {
-  content: "";
-  display: inline-block;
-  width: 5px;
-  height: 100%;
-  background: #54B689;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.content-projects-box {
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #ffffffB3;
-  margin: 0 0 24px;
-}
-
+/* Carousel Styles */
 .carousel-wrapper {
   position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding-left: 40px; /* add padding to the left to make room for the Previous button */
-}
-
-.carousel-inner {
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  transition: transform 0.5s ease-in-out;
-  margin-left: -40px; /* add negative margin to compensate for the padding */
-  padding-left: 40px; /* add padding to the left to push the cards to the right */
+  overflow: hidden; /* Hide overflow */
 }
 
 .carousel-item {
-  width: 100%;
-  display: inline-block;
-  margin-right: 5px; /* reduce the margin to make the gap smaller */
+  text-align: center; /* Center content */
 }
 
 .card {
-  background-color: #1e2a3a;
-  border: 1px solid #54B689;
-  color: rgba(255,255,255,0.08);
-  border-radius: 10px;
-  padding: 20px;
-  width: 80%; /* adjust the width to fit your needs */
-  margin: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: relative; /* add relative positioning to the cards */
-  z-index: 0; /* add z-index to send the cards to the back */
+  background-color: #1e2a3a; /* Card background */
+  border: 1px solid #54B689; /* Card border */
+  color: rgba(255, 255, 255, 0.8); /* Light text */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Inner padding */
+  margin: 1rem; /* Margin between cards */
+  max-width: 300px; /* Limit max width of cards */
+  width: 100%; /* Full width for cards */
 }
 
-.carousel-control-prev, .carousel-control-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  z-index: 1; /* add z-index to bring buttons to the front */
+/* Modal Styles */
+.modal {
+  background: rgba(0, 0, 0, 0.8); /* Dark overlay */
 }
 
-.carousel-control-prev:hover, .carousel-control-next:hover {
-  background-color: #444;
+.modal-content {
+  background: #1e2a3a; /* Modal background */
+  color: white; /* White text */
+  border-radius: 8px; /* Rounded corners */
 }
 
-.carousel-control-prev {
-  left: 10px;
+.pdf-viewer {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: contain; /* Maintain aspect ratio */
 }
 
-.carousel-control-next {
-  right: 10px;
+/* Additional iPhone-Specific Adjustments */
+@media (max-width: 414px) { /* Targeting larger iPhones */
+  .content-bio {
+    flex-direction: column; /* Stack bio and image vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .content-image {
+    margin-left: 0; /* No margin on small screens */
+    margin-top: 1rem; /* Add space above image */
+  }
+
+  .content-image img {
+    border-radius: 10px; /* Keep rounded corners */
+  }
+
+  .card {
+    margin: 0.5rem; /* Smaller margin for cards */
+  }
 }
