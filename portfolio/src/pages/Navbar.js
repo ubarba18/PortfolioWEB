@@ -7,7 +7,7 @@ const Navbar = ({ openModal }) => {
         <nav className="Navbar-container d-flex flex-column">
             <div className="Navbar-profile text-center">
                 <h1>Uriel Barba</h1>
-                <div className="pfp-rounded">
+                <div className="pfp-container">
                     <img
                         className="pfp img-fluid"
                         src="images/lul.jpg"
