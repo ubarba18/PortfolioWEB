@@ -1,7 +1,5 @@
-import "./App.css";
-import "./pages/AboutMe";
+import "./App.css"; // You can still keep your custom styles if needed
 import Navbar from "./pages/Navbar";
-import About from "./pages/AboutMe";
 import Content from "./pages/Content";
 import { useState } from "react";
 
@@ -16,14 +14,20 @@ function App() {
         setIsModalOpen(false);
     };
 
+    const handleModalClick = (e) => {
+        if (e.target.className === "modal") {
+            closeModal();
+        }
+    };
+
     return (
         <div className="App">
-            <header className="App-header">
+            <header className="App-header d-flex flex-wrap">
                 <Navbar openModal={openModal} />
                 {isModalOpen && (
-                    <div className="modal">
-                        <div className="modal-content" onClick={closeModal}>
-                            <span className="close">&times;</span>
+                    <div className="modal" onClick={handleModalClick}>
+                        <div className="modal-content">
+                            <span className="close" onClick={closeModal}></span>
                             <iframe
                                 className="pdf-viewer"
                                 src="./images/UBARBARESUME(2024).pdf"
