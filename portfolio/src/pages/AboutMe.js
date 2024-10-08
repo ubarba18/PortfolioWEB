@@ -8,7 +8,7 @@ const About = () => {
                 <h1> Uriel Barba </h1>
             </div>
             <div className="AboutMe-img">
-                <img src="images/logo192.png"></img>
+                <img src={`${process.env.PUBLIC_URL}/images/lul.jpg`}></img>
             </div>
         </div>
     );

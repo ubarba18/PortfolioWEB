@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Carousel } from "react-bootstrap"; // Import Bootstrap Carousel
+import React, { useState, useEffect } from "react";
+import { Carousel, Card } from "react-bootstrap"; // Import Bootstrap Carousel and Card
 
 const Content = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [cardsToShow, setCardsToShow] = useState(1); // Default to showing 1 card
     const projects = [
         {
             image: "project1-image.jpg",
@@ -38,9 +38,35 @@ const Content = () => {
         // Add more projects here
     ];
 
+    useEffect(() => {
+        const updateCardsToShow = () => {
+            const width = window.innerWidth;
+            if (width <= 430) {
+                setCardsToShow(1);
+            } else if (width > 1537) {
+                setCardsToShow(3);
+            } else {
+                setCardsToShow(2);
+            }
+        };
+
+        // Set initial cards to show
+        updateCardsToShow();
+
+        // Add event listener
+        window.addEventListener("resize", updateCardsToShow);
+
+        // Cleanup the event listener on unmount
+        return () => {
+            window.removeEventListener("resize", updateCardsToShow);
+        };
+    }, []);
+
+    const totalSlides = Math.ceil(projects.length / cardsToShow); // Calculate total slides based on cardsToShow
+
     return (
         <div className="Content container">
-            <div className="content-bio row align-items-center mb-2">
+            <div className="content-bio row align-items-center mb-5">
                 <div className="content-container col-md-6">
                     <h2 className="content-name">Uriel Barba</h2>
                     <div className="content-title">Software Developer</div>
@@ -55,41 +81,83 @@ const Content = () => {
                 </div>
                 <div className="content-image col-md-1">
                     <img
-                        src="./images/lul.jpg"
-                        alt="photo"
+                        src={`${process.env.PUBLIC_URL}/images/lul.jpg`}
+                        alt="pic"
                         className="img-fluid rounded"
                     />
                 </div>
             </div>
             <hr />
             <div className="content-projects">
-                <h2 className="content-projects-title">Projects</h2>
+                <h2 className="content-projects-title mb-4">Projects</h2>
                 <Carousel className="content-projects-carousel">
-                    {projects.map((project, index) => (
-                        <Carousel.Item key={index}>
-                            <a
-                                href={project.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <div className="card">
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="card-img-top"
-                                    />
-                                    <div className="card-body">
-                                        <h5 className="card-title">
-                                            {project.title}
-                                        </h5>
-                                        <p className="card-text">
-                                            {project.description}
-                                        </p>
-                                    </div>
+                    {Array.from({ length: totalSlides }).map(
+                        (_, slideIndex) => (
+                            <Carousel.Item key={slideIndex}>
+                                <div className="d-flex justify-content-center">
+                                    {Array.from({ length: cardsToShow }).map(
+                                        (_, cardIndex) => {
+                                            const projectIndex =
+                                                slideIndex * cardsToShow +
+                                                cardIndex;
+                                            if (projectIndex >= projects.length)
+                                                return null; // Prevent out of bounds
+                                            return (
+                                                <a
+                                                    key={projectIndex}
+                                                    href={
+                                                        projects[projectIndex]
+                                                            .link
+                                                    }
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-decoration-none mx-2"
+                                                >
+                                                    <Card
+                                                        style={{
+                                                            width: "18rem",
+                                                        }}
+                                                        className="text-center bg-dark text-white border-light"
+                                                    >
+                                                        <Card.Img
+                                                            variant="top"
+                                                            src={
+                                                                projects[
+                                                                    projectIndex
+                                                                ].image
+                                                            }
+                                                            style={{
+                                                                height: "200px",
+                                                                objectFit:
+                                                                    "cover",
+                                                            }}
+                                                        />
+                                                        <Card.Body>
+                                                            <Card.Title>
+                                                                {
+                                                                    projects[
+                                                                        projectIndex
+                                                                    ].title
+                                                                }
+                                                            </Card.Title>
+                                                            <Card.Text>
+                                                                {
+                                                                    projects[
+                                                                        projectIndex
+                                                                    ]
+                                                                        .description
+                                                                }
+                                                            </Card.Text>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </a>
+                                            );
+                                        }
+                                    )}
                                 </div>
-                            </a>
-                        </Carousel.Item>
-                    ))}
+                            </Carousel.Item>
+                        )
+                    )}
                 </Carousel>
             </div>
         </div>

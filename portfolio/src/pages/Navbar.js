@@ -10,7 +10,7 @@ const Navbar = ({ openModal }) => {
                 <div className="pfp-container">
                     <img
                         className="pfp img-fluid"
-                        src="images/lul.jpg"
+                        src={`${process.env.PUBLIC_URL}/images/lul.jpg`}
                         alt="me"
                     />
                 </div>
@@ -37,21 +37,31 @@ const Navbar = ({ openModal }) => {
                 </ul>
             </div>
             <hr />
-            <ul className="Navbar-links list-unstyled">
+            <ul className="Navbar-links style">
                 <li className="nav-item">
-                    <a href="#">
+                    <button
+                        className="invisible-button"
+                        onClick={() => {
+                            /* Add your functionality here */
+                        }}
+                    >
                         <CgUser /> About Me
-                    </a>
+                    </button>
                 </li>
                 <li className="nav-item">
-                    <a href="#" onClick={openModal}>
+                    <button className="invisible-button" onClick={openModal}>
                         <CgExport /> Resume
-                    </a>
+                    </button>
                 </li>
                 <li className="nav-item">
-                    <a href="#">
+                    <button
+                        className="invisible-button"
+                        onClick={() => {
+                            /* Add your functionality here */
+                        }}
+                    >
                         <CgMailOpen /> Contact Me
-                    </a>
+                    </button>
                 </li>
             </ul>
         </nav>
