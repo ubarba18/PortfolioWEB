@@ -217,7 +217,7 @@ object-fit: contain; /* Scale the PDF to fit within the container while maintain
   }
 
   .carousel-control-prev, .carousel-control-next {
-    border: red solid 1px;
+    /* border: red solid 1px; */
     width: 9%;
   }
 
