@@ -7,7 +7,6 @@ import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 
-
 function App() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
@@ -15,10 +14,12 @@ function App() {
 
     const openModal = () => {
         setIsModalOpen(true);
+        document.body.style.overflow = "hidden"; // Disable scrolling
     };
 
     const closeModal = () => {
         setIsModalOpen(false);
+        document.body.style.overflow = "auto"; // Re-enable scrolling
     };
 
     const handleModalClick = (e) => {
@@ -59,9 +60,7 @@ function App() {
                 {isModalOpen && (
                     <div className="modal" onClick={handleModalClick}>
                         <div className="modal-content">
-                            <span className="close" onClick={closeModal}>
-                                ×
-                            </span>
+                            <span className="close" onClick={closeModal}></span>
                             <Worker
                                 workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}
                             >
@@ -71,6 +70,7 @@ function App() {
 
                                     defaultScale={scale}
                                     theme={"dark"}
+                                    style={{ height: "100%", width: "100%" }} // Ensure viewer takes full size
                                 />
                             </Worker>
                             <button

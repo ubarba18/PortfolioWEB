@@ -140,28 +140,45 @@
 
 /* Modal Styles */
 .modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
 }
 
 .modal-content {
   position: relative;
-  width: 90vw;
+  width: 80%; /* Change as needed */
+  max-width: 900px; /* Change as needed */
+
   height: 90vh;
-  background: #1e2a3a;
+  background: #1b1d1f;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
-  overflow-y: auto;
+  overflow: hidden;
+  padding: 20px;
   text-align: center;
 }
+
+.buttonStyle {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #fff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* Corrected to use hyphen instead of camelCase */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+
 
 .close {
   position: absolute;
@@ -173,17 +190,11 @@
   cursor: pointer;
 }
 
-.buttonStyle {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #111821;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px; /* Corrected to use hyphen instead of camelCase */
-  transition: background-color 0.3s ease; /* Smooth transition */
+/* Inner page styles */
+.rpv-core__inner-page {
+  background-color: transparent !important; /* Make inner page background transparent */
 }
+
 
 /* Hover effect */
 .buttonStyle:hover {
@@ -223,11 +234,11 @@
   }
 
   .modal-content {
-      width: 95vw; /* A little more width on smaller screens */
-      height: 80vh; /* Reduce height to fit better on iPhones */
-      border-radius: 5px; /* Slightly smaller rounded corners */
+      width: 100%;
       
   }
+
+
 
   .close {
       font-size: 20px; /* Adjust font size of the close button */
