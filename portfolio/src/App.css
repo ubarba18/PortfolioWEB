@@ -4,7 +4,6 @@
   min-height: 100vh; /* Ensure full height */
 }
 
-
 /* Navbar Styles */
 .Navbar-container {
   position: fixed; /* Fixed positioning */
@@ -23,7 +22,7 @@
   font-size: 30px;
 }
 
-.list-inline-item{
+.list-inline-item {
   padding: 0.5rem 0 0.5rem 1rem;
   align-items: center;
 }
@@ -33,7 +32,6 @@
   padding: 1rem;
   font-size: 15px;
   font-weight: bold;
-  
 }
 
 .Navbar-links a {
@@ -61,19 +59,17 @@
 
 /* Add hover effects if desired */
 .invisible-button:hover {
-  color: #54B689; /* Change color on hover */
+  color: #070e18; /* Change color on hover */
 }
 
 .carousel-control-prev, .carousel-control-next {
-  /* border: red solid 1px; */
   width: 9%;
 }
 
 .carousel-item {
-    padding: 20px; /* Add padding if needed */
-    padding-bottom: 50px;
+  padding: 20px; /* Add padding if needed */
+  padding-bottom: 50px;
 }
-
 
 /* Content Styles */
 .Content {
@@ -104,33 +100,32 @@
 
 /* Projects Section */
 .content-projects {
-  
   margin-top: 2rem; /* Space above projects */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .content-projects-title {
-    font-size: 1.5rem; /* Smaller title size on mobile */
+      font-size: 1.5rem; /* Smaller title size on mobile */
   }
   .Navbar-container {
-    width: 100%; /* Full width on small screens */
-    height: auto; /* Height adjusts based on content */
-    position: relative; /* Change to relative for mobile view */
+      width: 100%; /* Full width on small screens */
+      height: auto; /* Height adjusts based on content */
+      position: relative; /* Change to relative for mobile view */
   }
   .Content {
-    margin-left: 0; /* Remove left margin on small screens */
-    margin-top: 56px; /* Add a top margin equal to navbar height */
-    padding: 1rem; /* Adjust padding */
-    width: 100%; /* Make content full width */
+      margin-left: 0; /* Remove left margin on small screens */
+      margin-top: 56px; /* Add a top margin equal to navbar height */
+      padding: 1rem; /* Adjust padding */
+      width: 100%; /* Make content full width */
   }
 }
+
 /* Carousel Styles */
 .carousel-wrapper {
   position: relative;
   overflow: hidden; /* Hide overflow */
 }
-
 
 .card {
   background-color: #1e2a3a; /* Card background */
@@ -145,117 +140,117 @@
 
 /* Modal Styles */
 .modal {
-  position: fixed; /* Fixes the overlay to cover the entire viewport */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background for better visibility */
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* Ensure it sits on top of other content */
-
+  z-index: 1000;
 }
 
 .modal-content {
-  position: relative; /* Allows absolute positioning for child elements */
-  width: 90vw; /* 90% of the viewport width */
-  height: 90vh; /* 90% of the viewport height */
+  position: relative;
+  width: 90vw;
+  height: 90vh;
   background: #1e2a3a;
-  overflow: hidden; /* Hide anything that overflows the container */
-  overflow-y: auto; /* Allow vertical scrolling */
-  
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
-  border-radius: 8px; /* Optional rounded corners */
-  cursor: pointer;
-  scrollbar-color: rgba(0, 0, 0, 0.2) #1e2a3a;
-  scrollbar-width: thin;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow-y: auto;
   text-align: center;
-
 }
 
 .close {
-  position: center;
-  top: 5px;
-  right: 10px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
   font-size: 24px;
   font-weight: bold;
+  color: white;
   cursor: pointer;
-
 }
 
-.pdf-viewer {
-width: 100%;
-height: 100%;
-object-fit: contain; /* Scale the PDF to fit within the container while maintaining its aspect ratio */
+.buttonStyle {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #111821;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* Corrected to use hyphen instead of camelCase */
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
+
+/* Hover effect */
+.buttonStyle:hover {
+  background-color: #111821; /* Darker shade on hover */
+}
+
+
+
 
 
 
 /* Additional iPhone-Specific Adjustments */
 @media (max-width: 430px) { /* Targeting larger iPhones */
   .Content {
-    margin-left: 0px;
+      margin-left: 0px;
   }
   .content-bio {
-    flex-direction: column; /* Stack bio and image vertically */
-    align-items: center; /* Center align for mobile */
+      flex-direction: column; /* Stack bio and image vertically */
+      align-items: center; /* Center align for mobile */
   }
 
   .content-image {
-    margin-left: 0; /* No margin on small screens */
-    margin-top: 1rem; /* Add space above image */
+      margin-left: 0; /* No margin on small screens */
+      margin-top: 1rem; /* Add space above image */
   }
 
   .content-image img {
-    border-radius: 10px; /* Keep rounded corners */
+      border-radius: 10px; /* Keep rounded corners */
   }
 
   .card {
-    margin: 0.5rem; /* Smaller margin for cards */
+      margin: 0.5rem; /* Smaller margin for cards */
   }
 
   .carousel-control-prev, .carousel-control-next {
-    /* border: red solid 1px; */
-    width: 9%;
+      width: 9%;
   }
 
-  @media (max-width: 430px) {
-    .modal-content {
+  .modal-content {
       width: 95vw; /* A little more width on smaller screens */
       height: 80vh; /* Reduce height to fit better on iPhones */
       border-radius: 5px; /* Slightly smaller rounded corners */
-    }
-  
-    .close {
+      
+  }
+
+  .close {
       font-size: 20px; /* Adjust font size of the close button */
       top: 10px;
       right: 15px; /* Give a little more space for the close button */
-    }
-  
-    .pdf-viewer {
-      height: auto; /* Allow the height to adjust based on content */
-      max-height: 70vh; /* Prevent the PDF viewer from overflowing */
-    }
-  
-    .modal {
+  }
+
+  .modal {
       padding: 10px; /* Add padding around the modal to ensure it doesn't touch the edges */
-    }
   }
 
   .Navbar-links {
-    display: flex;
-    flex-direction: row; /* Display items in a row */
-    justify-content: space-around; /* Space out items evenly */
-    align-items: center; /* Center vertically */
-    padding: 0;
+      display: flex;
+      flex-direction: row; /* Display items in a row */
+      justify-content: space-around; /* Space out items evenly */
+      align-items: center; /* Center vertically */
+      padding: 0;
   }
 
   /* Adjust margin and spacing for smaller screens */
   .nav-item {
-    margin-bottom: 0; /* Remove bottom margin */
-    flex-grow: 1; /* Ensure each item takes up space equally */
-    text-align: center; /* Center the text */
+      margin-bottom: 0; /* Remove bottom margin */
+      flex-grow: 1; /* Ensure each item takes up space equally */
+      text-align: center; /* Center the text */
   }
 }
