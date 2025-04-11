@@ -128,9 +128,6 @@
 }
 
 .card {
-  background-color: #1e2a3a; /* Card background */
-  border: 1px solid #54B689; /* Card border */
-  color: rgba(255, 255, 255, 0.8); /* Light text */
   border-radius: 10px; /* Rounded corners */
   padding: 20px; /* Inner padding */
   margin: 1rem; /* Margin between cards */
@@ -199,6 +196,7 @@
 /* Hover effect */
 .buttonStyle:hover {
   background-color: #111821; /* Darker shade on hover */
+  color: white;
 }
 
 
@@ -264,4 +262,25 @@
       flex-grow: 1; /* Ensure each item takes up space equally */
       text-align: center; /* Center the text */
   }
+}
+
+.content-skills {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.icon {
+  font-size: 40px; /* Adjust icon size */
+  
+  margin-bottom: 10px; /* Space between icon and title */
+}
+
+.card {
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Scale up on hover */
 }

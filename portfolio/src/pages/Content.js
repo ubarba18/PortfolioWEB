@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Carousel, Card } from "react-bootstrap"; // Import Bootstrap Carousel and Card
-
+import { Row, Col } from "react-bootstrap";
+import {
+    FaJsSquare,
+    FaReact,
+    FaBootstrap,
+    FaPython,
+    FaDatabase,
+    FaGitAlt,
+    FaFigma,
+    FaNodeJs,
+    FaFlask,
+} from "react-icons/fa";
 const Content = () => {
     const [cardsToShow, setCardsToShow] = useState(1); // Default to showing 1 card
     const projects = [
@@ -36,6 +47,19 @@ const Content = () => {
             description: "Project 6 description",
         },
         // Add more projects here
+    ];
+
+    const skills = [
+        { icons: [<FaJsSquare />], name: "JavaScript" },
+        {
+            icons: [<FaReact />, " ", <FaBootstrap />],
+            name: "React, Bootstrap",
+        },
+        { icons: [<FaNodeJs />], name: "Node.js" },
+        { icons: [<FaPython />, " ", <FaFlask />], name: "Python, Flask" },
+        { icons: [<FaFigma />], name: "Figma" },
+        { icons: [<FaDatabase />], name: "SQL" },
+        { icons: [<FaGitAlt />], name: "Git" },
     ];
 
     useEffect(() => {
@@ -160,6 +184,31 @@ const Content = () => {
                     )}
                 </Carousel>
             </div>
+            <hr />
+            <section className="content-skills">
+                <h2>Languages and Skills</h2>
+                <Row>
+                    {skills.map((skill, index) => (
+                        <Col xs={6} md={3} key={index} className="mb-4">
+                            <Card className="bg-dark text-white border-light">
+                                <Card.Body>
+                                    <div className="icon">
+                                        {skill.icons.map((icon, iconIndex) => (
+                                            <span
+                                                key={iconIndex}
+                                                className="skill-icon"
+                                            >
+                                                {icon}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <Card.Title>{skill.name}</Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}
+                </Row>
+            </section>
         </div>
     );
 };

@@ -29,8 +29,8 @@ function App() {
     };
     const downloadPDF = () => {
         const link = document.createElement("a");
-        link.href = `${process.env.PUBLIC_URL}/images/UBARBARESUME(2024).pdf`;
-        link.download = "UBARBARESUME(2024).pdf"; // Specify the default file name
+        link.href = `${process.env.PUBLIC_URL}/images/portfolio/public/images/UrielBarba(2025).pdf.pdf`;
+        link.download = "portfolio/public/images/UrielBarba(2025).pdf.pdf"; // Specify the default file name
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -65,7 +65,7 @@ function App() {
                                 workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}
                             >
                                 <Viewer
-                                    fileUrl={`${process.env.PUBLIC_URL}/images/UBARBARESUME(2024).pdf`}
+                                    fileUrl={`${process.env.PUBLIC_URL}/images/UrielBarba(2025).pdf`}
                                     //plugins={[defaultLayoutPluginInstance]} // Include the plugin here
 
                                     defaultScale={scale}
