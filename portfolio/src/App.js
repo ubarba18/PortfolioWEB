@@ -28,9 +28,13 @@ function App() {
         }
     };
     const downloadPDF = () => {
+        const basePath = window.location.origin.includes("github.io")
+            ? "/PortfolioWEB"
+            : "";
+
         const link = document.createElement("a");
-        link.href = `${process.env.PUBLIC_URL}/images/UrielBarba(2025).pdf`;
-        link.download = "UrielBarba(2025).pdf"; // Name the file correctly
+        link.href = `${basePath}/images/UrielBarba(2025).pdf`;
+        link.download = "UrielBarba(2025).pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
