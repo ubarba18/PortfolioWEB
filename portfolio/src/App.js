@@ -29,8 +29,8 @@ function App() {
     };
     const downloadPDF = () => {
         const link = document.createElement("a");
-        link.href = `${process.env.PUBLIC_URL}/images/portfolio/public/images/UrielBarba(2025).pdf.pdf`;
-        link.download = "portfolio/public/images/UrielBarba(2025).pdf.pdf"; // Specify the default file name
+        link.href = `${process.env.PUBLIC_URL}/images/UrielBarba(2025).pdf`;
+        link.download = "UrielBarba(2025).pdf"; // Name the file correctly
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
